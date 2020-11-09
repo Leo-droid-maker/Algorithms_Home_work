@@ -1,15 +1,18 @@
-n = int(input('Введите число элементов ряда чисел: 1, -0.5, 0.25, -0.125,… (натуральное число) для расчета суммы: '))
+import random as rd
 
-tmp = 1
-count = 0
-result = 0
+SIZE = 30
+MIN_ITEM = 0
+MAX_ITEM = 20
+array = [rd.randint(MIN_ITEM, MAX_ITEM) for _ in range(SIZE)]
+print(array)
 
-while count != n:
-    tmp /= -2
-    result += tmp
-    count += 1
+a = MIN_ITEM
 
-print(f'Результат: {result}')
+for i in range(SIZE):
+    if array.count(array[i]) > array.count(a):
+        a = array[i]
+
+print(f'Первое чаще всего встречающееся число в списке: {a}')
 
 
 

@@ -1,11 +1,28 @@
-x = int(input('Введите целое положительное число: '))
-res = ''
+import random as rd
 
-while x > 0:
-    temp = str(x % 10)
-    res = res + temp
-    x //= 10
+SIZE = 5
+MIN_ITEM = 0
+MAX_ITEM = 20
+array = [rd.randint(MIN_ITEM, MAX_ITEM) for _ in range(SIZE)]
+print(array)
 
-print(int(res))
+max_index = 0
+min_index = 0
+
+for i in range(SIZE):
+    if array[i] > array[max_index]:
+        max_index = i
+    elif array[i] < array[min_index]:
+        min_index = i
+
+print(f'Меняем местами элементы с индексами: {max_index}, {min_index}')
+
+array[max_index], array[min_index] = array[min_index], array[max_index]
+
+print(array)
+
+
+
+
 
 

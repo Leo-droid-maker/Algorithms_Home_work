@@ -1,14 +1,11 @@
-x = int(input('Введите натуральное число (целое, больше 0) любой длины: '))
-odd = 0
-even = 0
+import random as rd
 
-while x > 0:
-    num = x % 10
-    if num % 2 == 0:
-        even += 1
-        x //= 10
-    else:
-        odd += 1
-        x //= 10
+SIZE = 10
+MIN_ITEM = 0
+MAX_ITEM = 20
+array = [rd.randint(MIN_ITEM, MAX_ITEM) for _ in range(SIZE)]
+print(array)
 
-print(f'Нечетных цифр в введенном числе: {odd}. Четных цифр: {even}')
+a = [i for i, item in enumerate(array) if item % 2 == 0]
+
+print(f'индексы четных элементов списка: {a}')
